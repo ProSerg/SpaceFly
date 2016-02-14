@@ -1,28 +1,24 @@
 package ru.home;
 
-import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import javax.swing.*;
 
 /**
  * Created by markin on 09.02.2016.
  */
-public class BaseView extends Frame {
+public class BaseView extends JFrame {
     final String text = "Pppp!";
+    final int pos_x=200;
+    final int pos_y=300;
+    final int width=300;
+    final int height=300;
+
     BaseView(String title) {
-        super();
-        this.setTitle(title);
-        this.setVisible(true);
-        this.setSize(300,300);
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                super.windowClosing(e);
-                dispose();
-                System.exit(0);
-            }
-        });
+        setTitle(title);
+        setBounds(pos_x,pos_y,width,height);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setVisible(true);
     }
+
     public String getTest() {
         return this.text;
     }
